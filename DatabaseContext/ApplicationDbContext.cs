@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Tattelecom.Entities;
 
-namespace ElectronicShopOleynik.DatabaseContext;
+namespace Tattelecom.DatabaseContext;
 
 public class ApplicationDbContext : DbContext
 {
@@ -14,34 +14,34 @@ public class ApplicationDbContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        modelBuilder.Entity<AssignmentsEntity>(productsConfiguration =>
+        modelBuilder.Entity<AssignmentsEntity>(assignmentsConfiguration =>
         {
-            productsConfiguration.HasKey(a => a.Id);
+            assignmentsConfiguration.HasKey(a => a.Id);
         });
 
-        modelBuilder.Entity<CategoriesEntity>(productsConfiguration =>
+        modelBuilder.Entity<CategoriesEntity>(categoriesConfiguration =>
         {
-            productsConfiguration.HasKey(c => c.Id);
+            categoriesConfiguration.HasKey(c => c.Id);
         });
 
-        modelBuilder.Entity<EmployeesEntity>(productsConfiguration =>
+        modelBuilder.Entity<EmployeesEntity>(employeesConfiguration =>
         {
-            productsConfiguration.HasKey(e => e.Id);
+            employeesConfiguration.HasKey(e => e.Id);
         });
 
-        modelBuilder.Entity<StatusesEntity>(productsConfiguration =>
+        modelBuilder.Entity<StatusesEntity>(statusesConfiguration =>
         {
-            productsConfiguration.HasKey(s => s.Id);
+            statusesConfiguration.HasKey(s => s.Id);
         });
 
-        modelBuilder.Entity<TicketsEntity>(productsConfiguration =>
+        modelBuilder.Entity<TicketsEntity>(ticketsConfiguration =>
         {
-            productsConfiguration.HasKey(t => t.Id);
+            ticketsConfiguration.HasKey(t => t.Id);
         });
 
-        modelBuilder.Entity<UsersEntity>(productsConfiguration =>
+        modelBuilder.Entity<UsersEntity>(usersConfiguration =>
         {
-            productsConfiguration.HasKey(u => u.Id);
+            usersConfiguration.HasKey(u => u.Id);
         });
     }
 
