@@ -41,12 +41,25 @@ namespace Tattelecom
 
                 if (user != null)
                 {
-                    // Передаем ID пользователя на страницу создания заявки
-                    await Shell.Current.GoToAsync($"{nameof(CreateTicketPage)}?userId={user.Id}");
+                    // Сохраняем пользователя
+                    ApplicationData.CurrentUser = user;
 
                     // Успешная авторизация
                     await DisplayAlert("Успех", "Вы успешно вошли!", "OK");
-                    await Shell.Current.GoToAsync("//CreateTicketPage");
+
+                    // Переход на страницу CreateTicketPage
+                    try
+                    {
+                        await Shell.Current.GoToAsync("///CreateTicketPage");
+                    }
+                    catch (Exception ex)
+                    {
+                        await DisplayAlert("Ошибка", $"Не удалось перейти на страницу: {ex.Message}", "OK");
+                    }
+                }
+                else
+                {
+                    await DisplayAlert("Ошибка", "Неверный логин или пароль!", "OK");
                 }
             }
             catch (Exception ex)

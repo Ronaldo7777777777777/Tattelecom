@@ -7,7 +7,7 @@ namespace Tattelecom
 {
     public partial class CreateTicketPage : ContentPage
     {
-        public CreateTicketPage(int userId)
+        public CreateTicketPage()
         {
             InitializeComponent();
 
@@ -30,33 +30,34 @@ namespace Tattelecom
 
             using (var db = new ApplicationDbContext())
             {
+
+                if (ApplicationData.CurrentUser == null)
+                {
+                    await DisplayAlert("Ошибка", "Пользователь не авторизован!","ОК");
+                    return;
+                }
                 try
                 {
-                    var category = await db.Categories
-                        .FirstOrDefaultAsync(c => c.Name == categoryName)
-                        ?? new CategoriesEntity(categoryName);
-
+                    var category = await db.Categories.FirstOrDefaultAsync(c => c.Name == categoryName)?? new CategoriesEntity(categoryName);
                     if (category.Id == 0)
                     {
                         db.Categories.Add(category);
                         await db.SaveChangesAsync();
                     }
-
-                    var status = await db.Statuses
-                        .FirstOrDefaultAsync(s => s.Name == "Открыта")
-                        ?? new StatusesEntity("Открыта");
-
+                    var status = await db.Statuses .FirstOrDefaultAsync(s => s.Name == "Открыта")?? new StatusesEntity("Открыта");
                     if (status.Id == 0)
                     {
                         db.Statuses.Add(status);
                         await db.SaveChangesAsync();
                     }
 
+
+
                     var ticket = new TicketsEntity(
-                        userId: user.Id, // Используем сохраненный ID
+                        loginId: ApplicationData.CurrentUser.Login, 
                         title: title,
                         description: description,
-                        category_id: category.Id,
+                        categoryid: category.Id,
                         preferredTime: preferredTime,
                         statusId: status.Id
                     );
