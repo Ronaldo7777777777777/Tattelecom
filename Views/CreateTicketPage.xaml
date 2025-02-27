@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="Tattelecom.CreateTicketPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="Создать заявку"
+    BackgroundColor="#F5F5F5">
+
+    <ScrollView>
+        <Grid RowDefinitions="*, Auto, *">
+            <!-- Заголовок -->
+            <VerticalStackLayout
+                Grid.Row="0"
+                VerticalOptions="Center"
+                HorizontalOptions="Center"
+                Spacing="10">
+                <Label
+                    Text="Создание заявки"
+                    FontSize="25"
+                    FontAttributes="Bold"
+                    TextColor="#333333" />
+                <Label
+                    Text="Опишите вашу проблему"
+                    FontSize="14"
+                    TextColor="#666666" />
+            </VerticalStackLayout>
+
+            <!-- Форма создания заявки -->
+            <Border
+                Grid.Row="1"
+                BackgroundColor="White"
+                Padding="20"
+                StrokeShape="RoundRectangle 15"
+                Margin="20">
+                <VerticalStackLayout Spacing="20">
+                    <!-- Поле для заголовка -->
+                    <VerticalStackLayout Spacing="5">
+                        <Label
+                            Text="Заголовок"
+                            FontSize="14"
+                            TextColor="#333333" />
+                        <Entry
+                            x:Name="TitleEntry"
+                            Placeholder="Введите заголовок"
+                            PlaceholderColor="#999999"
+                            TextColor="#333333"
+                            BackgroundColor="#F9F9F9"
+                            HeightRequest="40"
+                            ClearButtonVisibility="WhileEditing" />
+                    </VerticalStackLayout>
+
+                    <!-- Поле для описания -->
+                    <VerticalStackLayout Spacing="5">
+                        <Label
+                            Text="Описание"
+                            FontSize="14"
+                            TextColor="#333333" />
+                        <Editor
+                            x:Name="DescriptionEntry"
+                            Placeholder="Опишите вашу проблему"
+                            PlaceholderColor="#999999"
+                            TextColor="#333333"
+                            BackgroundColor="#F9F9F9"
+                            HeightRequest="100"
+                            AutoSize="TextChanges" />
+                    </VerticalStackLayout>
+
+                    <!-- Поле для категории -->
+                    <VerticalStackLayout Spacing="5">
+                        <Label
+                            Text="Категория"
+                            FontSize="14"
+                            TextColor="#333333" />
+                        <Picker
+                            x:Name="CategoryPicker"
+                            Title="Выберите категорию"
+                            TextColor="#333333"
+                            BackgroundColor="#F9F9F9"
+                            HeightRequest="40">
+                            <Picker.Items>
+                                <x:String>Техническая проблема</x:String>
+                                <x:String>Финансовый вопрос</x:String>
+                                <x:String>Другое</x:String>
+                            </Picker.Items>
+                        </Picker>
+                    </VerticalStackLayout>
+
+                    <!-- Поле для удобного времени -->
+                    <VerticalStackLayout Spacing="5">
+                        <Label
+                            Text="Удобное время для решение проблемы"
+                            FontSize="14"
+                            TextColor="#333333" />
+                        <DatePicker
+                            x:Name="PreferredTimePicker"
+                            TextColor="#333333"
+                            BackgroundColor="#F9F9F9"
+                            HeightRequest="40" />
+                    </VerticalStackLayout>
+
+
+
+                    <Button
+                        Text="Создать заявку"
+                        BackgroundColor="#FFBA00"
+                        TextColor="White"
+                        FontAttributes="Bold"
+                        CornerRadius="10"
+                        HeightRequest="50"
+                        Clicked="CreateTicketButton_Clicked" />
+                </VerticalStackLayout>
+            </Border>
+        </Grid>
+    </ScrollView>
+</ContentPage>

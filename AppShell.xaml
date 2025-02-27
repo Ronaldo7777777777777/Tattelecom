@@ -7,9 +7,17 @@
     Shell.FlyoutBehavior="Disabled"
     Title="Tattelecom">
 
-    <ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
+    <ShellContent Title="Home"  ContentTemplate="{DataTemplate local:LoginPage}"  Route="LoginPage" />
+
+    <ShellContent  Title="Authorization"  ContentTemplate="{DataTemplate local:MainPage}" Route="MainPage" />
+
+    <ShellContent  Title="Registration"  ContentTemplate="{DataTemplate local:RegistrationPage}" Route="RegistrationPage" />
+
+    <ShellContent  Title="AuthorizationSotrudnik"  ContentTemplate="{DataTemplate local:LoginPageSotrudnik}" Route="LoginPageSotrudnik" />
+
+    <ShellContent  Title="CreateTicketPage"  ContentTemplate="{DataTemplate local:CreateTicketPage}" Route="CreateTicketPage" />
+
+
+
 
 </Shell>

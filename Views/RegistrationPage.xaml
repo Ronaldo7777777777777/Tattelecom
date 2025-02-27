@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="Tattelecom.RegistrationPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="Регистрация"
+    BackgroundColor="#F5F5F5">
+
+    <ScrollView>
+        <Grid RowDefinitions="*, Auto, *">
+            <!-- Заголовок -->
+            <VerticalStackLayout
+                Grid.Row="0"
+                VerticalOptions="Center"
+                HorizontalOptions="Center"
+                Spacing="10">
+                <Label
+                    Text="Создание аккаунта!"
+                    FontSize="25"
+                    FontAttributes="Bold"
+                    TextColor="#333333" />
+                <Label
+                    Text="Заполните данные для регистрации"
+                    FontSize="14"
+                    TextColor="#666666" />
+            </VerticalStackLayout>
+
+            <!-- Форма регистрации -->
+            <Border
+                Grid.Row="1"
+                BackgroundColor="White"
+                Padding="20"
+                StrokeShape="RoundRectangle 15"
+                Margin="20">
+                <VerticalStackLayout Spacing="20">
+                    <!-- Поле для логина -->
+                    <VerticalStackLayout Spacing="5">
+                        <Label
+                            Text="Логин"
+                            FontSize="14"
+                            TextColor="#333333" />
+                        <Entry
+                            x:Name="UserLoginEntry"
+                            Placeholder="Введите логин"
+                            PlaceholderColor="#999999"
+                            TextColor="#333333"
+                            BackgroundColor="#F9F9F9"
+                            HeightRequest="40"
+                            ClearButtonVisibility="WhileEditing" />
+                    </VerticalStackLayout>
+
+                    <!-- Поле для фамилии -->
+                    <VerticalStackLayout Spacing="5">
+                        <Label
+                            Text="Фамилия"
+                            FontSize="14"
+                            TextColor="#333333" />
+                        <Entry
+                            x:Name="UserSurnameEntry"
+                            Placeholder="Введите фамилию"
+                            PlaceholderColor="#999999"
+                            TextColor="#333333"
+                            BackgroundColor="#F9F9F9"
+                            HeightRequest="40"
+                            ClearButtonVisibility="WhileEditing" />
+                    </VerticalStackLayout>
+
+                    <!-- Поле для имени -->
+                    <VerticalStackLayout Spacing="5">
+                        <Label
+                            Text="Имя"
+                            FontSize="14"
+                            TextColor="#333333" />
+                        <Entry
+                            x:Name="UserNameEntry"
+                            Placeholder="Введите имя"
+                            PlaceholderColor="#999999"
+                            TextColor="#333333"
+                            BackgroundColor="#F9F9F9"
+                            HeightRequest="40"
+                            ClearButtonVisibility="WhileEditing" />
+                    </VerticalStackLayout>
+
+                    <!-- Поле для телефона -->
+                    <VerticalStackLayout Spacing="5">
+                        <Label
+                            Text="Телефон"
+                            FontSize="14"
+                            TextColor="#333333" />
+                        <Entry
+                            x:Name="UserPhoneEntry"
+                            Placeholder="Введите телефон"
+                            PlaceholderColor="#999999"
+                            TextColor="#333333"
+                            BackgroundColor="#F9F9F9"
+                            HeightRequest="40"
+                            Keyboard="Telephone"
+                            ClearButtonVisibility="WhileEditing" />
+                    </VerticalStackLayout>
+
+                    <!-- Поле для email -->
+                    <VerticalStackLayout Spacing="5">
+                        <Label
+                            Text="Email"
+                            FontSize="14"
+                            TextColor="#333333" />
+                        <Entry
+                            x:Name="UserEmailEntry"
+                            Placeholder="Введите email"
+                            PlaceholderColor="#999999"
+                            TextColor="#333333"
+                            BackgroundColor="#F9F9F9"
+                            HeightRequest="40"
+                            Keyboard="Email"
+                            ClearButtonVisibility="WhileEditing" />
+                    </VerticalStackLayout>
+
+                    <!-- Поле для адреса -->
+                    <VerticalStackLayout Spacing="5">
+                        <Label
+                            Text="Адрес"
+                            FontSize="14"
+                            TextColor="#333333" />
+                        <Entry
+                            x:Name="UserAddressEntry"
+                            Placeholder="Введите адрес"
+                            PlaceholderColor="#999999"
+                            TextColor="#333333"
+                            BackgroundColor="#F9F9F9"
+                            HeightRequest="40"
+                            ClearButtonVisibility="WhileEditing" />
+                    </VerticalStackLayout>
+
+                    <!-- Поле для пароля -->
+                    <VerticalStackLayout Spacing="5">
+                        <Label
+                            Text="Пароль"
+                            FontSize="14"
+                            TextColor="#333333" />
+                        <Entry
+                            x:Name="UserPasswordEntry"
+                            Placeholder="Введите пароль"
+                            PlaceholderColor="#999999"
+                            TextColor="#333333"
+                            BackgroundColor="#F9F9F9"
+                            HeightRequest="40"
+                            IsPassword="True"
+                            ClearButtonVisibility="WhileEditing" />
+                    </VerticalStackLayout>
+
+                    <!-- Поле для повторного пароля -->
+                    <VerticalStackLayout Spacing="5">
+                        <Label
+                            Text="Повторите пароль"
+                            FontSize="14"
+                            TextColor="#333333" />
+                        <Entry
+                            x:Name="UserRepeatPasswordEntry"
+                            Placeholder="Повторите пароль"
+                            PlaceholderColor="#999999"
+                            TextColor="#333333"
+                            BackgroundColor="#F9F9F9"
+                            HeightRequest="40"
+                            IsPassword="True"
+                            ClearButtonVisibility="WhileEditing" />
+                    </VerticalStackLayout>
+
+                    <!-- Кнопка регистрации -->
+                    <Button
+                        Text="Зарегистрироваться"
+                        BackgroundColor="#FFBA00"
+                        TextColor="White"
+                        FontAttributes="Bold"
+                        CornerRadius="10"
+                        HeightRequest="50"
+                        Clicked="GoToRegistrationPage" />
+
+                    <!-- Кнопка возврата -->
+                    <Button
+                        Text="Уже есть аккаунт? Войти"
+                        BackgroundColor="Transparent"
+                        TextColor="#FFBA00"
+                        FontAttributes="Bold"
+                        CornerRadius="10"
+                        HeightRequest="40"
+                        Clicked="GoToMenuExitPage" />
+                </VerticalStackLayout>
+            </Border>
+        </Grid>
+    </ScrollView>
+</ContentPage>

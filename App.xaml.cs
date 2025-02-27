@@ -1,12 +1,14 @@
-﻿namespace Tattelecom
-{
-    public partial class App : Application
-    {
-        public App()
-        {
-            InitializeComponent();
+﻿using Tattelecom.DatabaseContext;
 
-            MainPage = new AppShell();
-        }
+namespace Tattelecom;
+
+public partial class App : Application
+{
+    public App(ApplicationDbContext dbContext)
+    {
+        InitializeComponent();
+
+        MainPage = new AppShell();
     }
 }
+

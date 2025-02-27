@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="Tattelecom.LoginPageSotrudnik"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="Вход сотрудника"
+    BackgroundColor="#F5F5F5">
+
+    <ScrollView>
+        <Grid RowDefinitions="*, Auto, *">
+            <!-- Заголовок -->
+            <VerticalStackLayout
+                Grid.Row="0"
+                VerticalOptions="Center"
+                HorizontalOptions="Center"
+                Spacing="10">
+                <Label
+                    Text="Добро пожаловать!"
+                    FontSize="25"
+                    FontAttributes="Bold"
+                    TextColor="#333333" />
+                <Label
+                    Text="Войдите, чтобы продолжить"
+                    FontSize="14"
+                    TextColor="#666666" />
+            </VerticalStackLayout>
+
+            <!-- Форма входа -->
+            <Border
+                Grid.Row="1"
+                BackgroundColor="White"
+                Padding="20"
+                StrokeShape="RoundRectangle 15"
+                Margin="20">
+                <VerticalStackLayout Spacing="20">
+                    <!-- Поле для логина -->
+                    <VerticalStackLayout Spacing="5">
+                        <Label
+                            Text="Логин"
+                            FontSize="14"
+                            TextColor="#333333" />
+                        <Entry
+                            x:Name="SotrudnikLoginEntry"
+                            Placeholder="Введите логин"
+                            PlaceholderColor="#999999"
+                            TextColor="#333333"
+                            BackgroundColor="#F9F9F9"
+                            HeightRequest="40"
+                            ClearButtonVisibility="WhileEditing" />
+                    </VerticalStackLayout>
+
+                    <!-- Поле для ФИО -->
+                    <VerticalStackLayout Spacing="5">
+                        <Label
+                            Text="ФИО"
+                            FontSize="14"
+                            TextColor="#333333" />
+                        <Entry
+                            x:Name="SotrudnikSurnameEntry"
+                            Placeholder="Введите ФИО"
+                            PlaceholderColor="#999999"
+                            TextColor="#333333"
+                            BackgroundColor="#F9F9F9"
+                            HeightRequest="40"
+                            ClearButtonVisibility="WhileEditing" />
+                    </VerticalStackLayout>
+
+                    <!-- Поле для должности -->
+                    <VerticalStackLayout Spacing="5">
+                        <Label
+                            Text="Должность"
+                            FontSize="14"
+                            TextColor="#333333" />
+                        <Entry
+                            x:Name="SotrudnikDolEntry"
+                            Placeholder="Введите должность"
+                            PlaceholderColor="#999999"
+                            TextColor="#333333"
+                            BackgroundColor="#F9F9F9"
+                            HeightRequest="40"
+                            ClearButtonVisibility="WhileEditing" />
+                    </VerticalStackLayout>
+
+                    <!-- Поле для отдела -->
+                    <VerticalStackLayout Spacing="5">
+                        <Label
+                            Text="Отдел"
+                            FontSize="14"
+                            TextColor="#333333" />
+                        <Entry
+                            x:Name="SotrudnikOtdelEntry"
+                            Placeholder="Введите отдел"
+                            PlaceholderColor="#999999"
+                            TextColor="#333333"
+                            BackgroundColor="#F9F9F9"
+                            HeightRequest="40"
+                            ClearButtonVisibility="WhileEditing" />
+                    </VerticalStackLayout>
+
+                    <!-- Поле для телефона -->
+                    <VerticalStackLayout Spacing="5">
+                        <Label
+                            Text="Телефон"
+                            FontSize="14"
+                            TextColor="#333333" />
+                        <Entry
+                            x:Name="SotrudnikPhoneEntry"
+                            Placeholder="Введите телефон"
+                            PlaceholderColor="#999999"
+                            TextColor="#333333"
+                            BackgroundColor="#F9F9F9"
+                            HeightRequest="40"
+                            Keyboard="Telephone"
+                            ClearButtonVisibility="WhileEditing" />
+                    </VerticalStackLayout>
+
+                    <!-- Поле для пароля -->
+                    <VerticalStackLayout Spacing="5">
+                        <Label
+                            Text="Пароль"
+                            FontSize="14"
+                            TextColor="#333333" />
+                        <Entry
+                            x:Name="SotrudnikPasswordEntry"
+                            Placeholder="Введите пароль"
+                            PlaceholderColor="#999999"
+                            TextColor="#333333"
+                            BackgroundColor="#F9F9F9"
+                            HeightRequest="40"
+                            IsPassword="True"
+                            ClearButtonVisibility="WhileEditing" />
+                    </VerticalStackLayout>
+
+                    <!-- Кнопка входа -->
+                    <Button
+                        Text="Войти в систему"
+                        BackgroundColor="#FFBA00"
+                        TextColor="White"
+                        FontAttributes="Bold"
+                        CornerRadius="10"
+                        HeightRequest="50"
+                        Clicked="GoToSotrudnikPage" />
+
+                    <!-- Кнопка "Назад" -->
+                    <Button
+                        Text="Назад"
+                        BackgroundColor="Transparent"
+                        TextColor="#FFBA00"
+                        FontAttributes="Bold"
+                        CornerRadius="10"
+                        HeightRequest="40"
+                        Clicked="GoToMenuExitPage" />
+                </VerticalStackLayout>
+            </Border>
+
+        </Grid>
+    </ScrollView>
+</ContentPage>

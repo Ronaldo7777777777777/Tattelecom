@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="Tattelecom.LoginPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="Вход"
+    BackgroundColor="#F5F5F5">
+
+    <ScrollView>
+        <Grid RowDefinitions="*, Auto, *">
+            <!-- Заголовок -->
+            <VerticalStackLayout
+                Grid.Row="0"
+                VerticalOptions="Center"
+                HorizontalOptions="Center"
+                Spacing="10">
+                <Label
+                    Text="Добро пожаловать!"
+                    FontSize="25"
+                    FontAttributes="Bold"
+                    TextColor="#333333" />
+                <Label
+                    Text="Войдите, чтобы продолжить"
+                    FontSize="14"
+                    TextColor="#666666" />
+            </VerticalStackLayout>
+
+            <!-- Форма входа -->
+            <Border
+                Grid.Row="1"
+                BackgroundColor="White"
+                Padding="20"
+                StrokeShape="RoundRectangle 15"
+                Margin="20">
+                <VerticalStackLayout Spacing="20">
+                    <!-- Поле для логина -->
+                    <VerticalStackLayout Spacing="5">
+                        <Label
+                            Text="Логин"
+                            FontSize="14"
+                            TextColor="#333333" />
+                        <Entry
+                            x:Name="userLogin"
+                            Placeholder="Введите логин"
+                            PlaceholderColor="#999999"
+                            TextColor="#333333"
+                            BackgroundColor="#F9F9F9"
+                            HeightRequest="40"
+                            ClearButtonVisibility="WhileEditing" />
+                    </VerticalStackLayout>
+
+                    <!-- Поле для пароля -->
+                    <VerticalStackLayout Spacing="5">
+                        <Label
+                            Text="Пароль"
+                            FontSize="14"
+                            TextColor="#333333" />
+                        <Entry
+                            x:Name="userPassword"
+                            Placeholder="Введите пароль"
+                            PlaceholderColor="#999999"
+                            TextColor="#333333"
+                            BackgroundColor="#F9F9F9"
+                            HeightRequest="40"
+                            IsPassword="True"
+                            ClearButtonVisibility="WhileEditing" />
+                    </VerticalStackLayout>
+
+                    <!-- Кнопка входа -->
+                    <Button
+                        Text="Войти"
+                        BackgroundColor="#FFBA00"
+                        TextColor="White"
+                        FontAttributes="Bold"
+                        CornerRadius="10"
+                        HeightRequest="50"
+                        Clicked="Auth_Button" />
+
+                    <!-- Кнопка регистрации -->
+                    <Button
+                        Text="Пройти регистрацию"
+                        BackgroundColor="#FFBA00"
+                        TextColor="White"
+                        FontAttributes="Bold"
+                        CornerRadius="10"
+                        HeightRequest="50"
+                        Clicked="Go_To_Registration_Button" />
+                </VerticalStackLayout>
+            </Border>
+
+            <!-- Кнопка для персонала -->
+            <Button
+                Grid.Row="2"
+                Text="для персонала"
+                BackgroundColor="#FFBA00"
+                TextColor="White"
+                FontAttributes="Bold"
+                CornerRadius="10"
+                HeightRequest="50"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                Margin="0,0,0,20"
+                Clicked="Go_To_Sotrudnik_Button" />
+        </Grid>
+    </ScrollView>
+</ContentPage>
